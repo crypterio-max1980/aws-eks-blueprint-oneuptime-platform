@@ -1,4 +1,3 @@
-
 resource "helm_release" "argo_events" {
   name       = "argo-events"
   repository = "https://argoproj.github.io/argo-helm"
