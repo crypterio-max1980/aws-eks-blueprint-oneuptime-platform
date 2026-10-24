@@ -1,14 +1,11 @@
 
-resource "kubernetes_ingress_v1" "grafana" {
+resource "kubernetes_ingress_v1" "ingress_route_uptime" {
   metadata {
-    name      = "ingress-route-grafana"
+    name      = "ingress-route-uptime"
     namespace = "default"
+
     annotations = {
-      "konghq.com/strip-path" = "true"
-      # Optional:
-      # "konghq.com/protocols"                 = "https"
-      # "konghq.com/https-redirect-status-code" = "301"
-      # "cert-manager.io/cluster-issuer"      = "letsencrypt-prod"
+      "konghq.com/strip-path" = "false"
     }
   }
 
@@ -16,19 +13,22 @@ resource "kubernetes_ingress_v1" "grafana" {
     ingress_class_name = "kong"
 
     tls {
-      hosts       = ["monitor.crypterio.co"]
-      secret_name = "loki-tls"
+      hosts       = ["uptime.crypterio.co"]
+      secret_name = "crt"
     }
 
     rule {
-      host = "monitor.crypterio.co"
+      host = "uptime.crypterio.co"
+
       http {
         path {
           path      = "/"
           path_type = "Prefix"
+
           backend {
             service {
-              name = "grafana"
+              name = "oneuptime-nginx"
+
               port {
                 number = 80
               }
@@ -39,4 +39,3 @@ resource "kubernetes_ingress_v1" "grafana" {
     }
   }
 }
-
