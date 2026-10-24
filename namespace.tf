@@ -1,5 +1,4 @@
 
-
 resource "kubernetes_namespace" "migration" {
   depends_on = [
     aws_eks_cluster.main,
