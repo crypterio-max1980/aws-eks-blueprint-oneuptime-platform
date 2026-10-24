@@ -2,9 +2,8 @@
 
 
 
-## AWS | BTCPAY Platform
-BTCPay Server creates invoices, presents checkout to customers, and records payments sent directly to wallets controlled by the merchant. It does not hold funds as a payment intermediary.
-
+## AWS | OneUptime Platform
+OneUptime is an open-source monitoring and observability platform that helps DevOps and SRE teams monitor applications and infrastructure, detect outages, send alerts, manage incidents, and publish service status pages
 
 
 
