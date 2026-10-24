@@ -1,4 +1,5 @@
 
+
 resource "kubernetes_deployment" "httpd_server" {
   metadata {
     name      = var.name
