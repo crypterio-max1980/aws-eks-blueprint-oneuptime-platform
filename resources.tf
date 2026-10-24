@@ -20,22 +20,13 @@ module "keda" {
   depends_on = [module.kong]
 }
 
-module "prometheus" {
-  source = "./modules/prometheus"
+module "oneuptime" {
+  source = "./modules/oneuptime"
   depends_on = [module.keda]
-}
-
-module "grafana" {
-  source = "./modules/grafana"
-  depends_on = [module.prometheus]
 }
 
 module "ingress" {
   source = "./modules/ingress"
-  depends_on = [module.grafana]
+  depends_on = [module.oneuptime]
 }
 
-module "btcpay" {
-  source = "./modules/btcpay"
-  depends_on = [module.ingress]
-}
