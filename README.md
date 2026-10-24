@@ -1,5 +1,4 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/df98db20-65d7-495e-bb20-461557771fd8" />
-
+<img width="1535" height="1024" alt="image" src="https://github.com/user-attachments/assets/b785d759-9f72-43fe-b5fe-4973fe2f6a26" />
 
 
 ## AWS | OneUptime Platform
