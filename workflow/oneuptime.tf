@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     oneuptime = {
@@ -10,7 +11,7 @@ terraform {
 provider "oneuptime" {
   # The API key comes from ONEUPTIME_API_KEY.
   # On a self-hosted OneUptime, add your OneUptime's address:
-  # oneuptime_url = "https://oneuptime.example.com"
+  oneuptime_url = "https://oneuptime.crypterio.co"
 }
 
 data "oneuptime_monitor_status" "operational" {
@@ -35,7 +36,7 @@ resource "oneuptime_monitor" "homepage" {
   labels              = [oneuptime_label.critical.id]
 
   monitor_steps = [{
-    monitor_destination      = "https://example.com"
+    monitor_destination      = "https://crypterio.co"
     monitor_destination_type = "URL"
     request_type             = "GET"
 
