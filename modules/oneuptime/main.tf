@@ -5,8 +5,7 @@ resource "kubernetes_namespace_v1" "oneuptime" {
     name = "oneuptime"
 
     labels = {
-      app         = "oneuptime"
-      environment = var.environment
+      app  = "oneuptime"
     }
   }
 }
